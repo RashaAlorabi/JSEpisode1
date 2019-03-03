@@ -5,7 +5,12 @@
  * - logs "Hello <name>" if there is a name
  */
 function greet(name) {
-  // Your code here
+  // Your code her
+  if (name) {
+    console.log(`Hello ${name}`);
+  } else {
+    console.log("Hello");
+  }
 }
 
 /**
@@ -15,6 +20,11 @@ function greet(name) {
  */
 function isOdd(n) {
   // Your code here
+  if (n % 2 != 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -30,6 +40,8 @@ function isOdd(n) {
  */
 function oddsSmallerThan(n) {
   // Your code here
+
+  return Math.floor(n / 2);
 }
 
 /**
@@ -44,6 +56,11 @@ function oddsSmallerThan(n) {
  */
 function squareOrDouble(n) {
   // Your code here
+  if (n % 2 == 0) {
+    return n * 2;
+  } else {
+    return Math.pow(n, 2);
+  }
 }
 
 /**
@@ -64,8 +81,15 @@ function squareOrDouble(n) {
  */
 function ageFromBirthDate(birthDate) {
   const _MS_PER_YEAR = 1000 * 60 * 60 * 24 * 365;
-
   // Your code here
+  let today = new Date();
+  let year = birthDate.slice(0, 4);
+  let month = birthDate.slice(4, 6);
+  let day = birthDate.slice(6, 9);
+  let newbirthDate = new Date(year + "-" + month + "-" + day);
+  let date = today - newbirthDate;
+  let age = Math.floor(date / _MS_PER_YEAR);
+  return age;
 }
 
 module.exports = {
